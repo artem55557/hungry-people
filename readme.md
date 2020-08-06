@@ -1,4 +1,4 @@
-<h1>HyngryPeople</h1>
+<h1>HungryPeople</h1>
 
 <p><strong>HyngryPeople</strong> - HTML5 template with <strong>Gulp 4</strong>, <strong>Sass/Scss/Less/Stylus</strong>, <strong>Browsersync</strong>, <strong>Autoprefixer</strong>, <strong>Uglify-ES</strong>, <strong>Clean-CSS</strong>, <strong>Rsync</strong>, <strong>CSS Reboot</strong> (Bootstrap reboot). It uses best practices for <strong>responsive images</strong> optimizing and contains a <strong>.htaccess</strong> file for resources caching (images, fonts, HTML, CSS, JS and other content types).</p>
 
