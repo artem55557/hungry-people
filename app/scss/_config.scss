@@ -1,10 +1,12 @@
 // USER VARIABLES SECTION
 
-$accent: orange; // Accent Color
-$fontsize: 16px; // Body Font Size
-$textcolor: #333; // Text Color
+$accent: #E8C300; // Accent Color
+$fontsize: 18px; // Body Font Size
+$textdark: #000000; // Text Color
+$textlight: rgba(255, 255, 255, 0.9);
+$textheading: #ffffff;
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
-$roboto: Roboto, sans-serif; // Roboto Font Family
+$opensans: 'Open Sans', sans-serif; 
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 20px;
@@ -20,43 +22,43 @@ $gutter: $grid-gutter-width;
 // FONTS LOAD SECTION
 
 @mixin font($fname, $fstyle, $fweight, $furl) {
-	@font-face {
-		font-family: $fname;
-		font-style: $fstyle;
-		font-weight: $fweight;
-		// font-display: swap; // Uncomment to initially display system fonts
-		src: local($fname), url($furl) format('woff2');
-	}
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    // font-display: swap; // Uncomment to initially display system fonts
+    src: local($fname), url($furl) format('woff2');
+  }
 }
-
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+@include font('Open Sans', normal, 400, '../fonts/opensans.woff2');
+@include font('Open Sans Bold', normal, 700, '../fonts/opensansbold.woff2');
+@include font('Banny', normal, 400, '../fonts/banny-round.woff2');
+@include font('Banny Ligth', normal, 200, '../fonts/banny-lightround.woff2');
+@include font('Banny Bold', normal, 700, '../fonts/banny-lightround.woff2');
 
 // GENERAL DOCUMENT STYLES
 
 ::placeholder {
-	color: #666;
+  color: #666;
 }
 
 ::selection {
-	background-color: $accent;
-	color: #fff;
+  background-color: $accent;
+  color: #fff;
 }
 
 input, textarea {
-	outline: none;
-	&:focus:required:invalid { border-color: red }
-	&:required:valid { border-color: green }
+  outline: none;
+  &:focus:required:invalid { border-color: red }
+  &:required:valid { border-color: green }
 }
 
 body {
-	font-family: $roboto;
-	font-size: $fontsize;
-	min-width: 320px;
-	position: relative;
-	line-height: 1.65;
-	overflow-x: hidden;
-	color: $textcolor;
+  font-family: $opensans;
+  font-size: $fontsize;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+  color: $textdark;
 }

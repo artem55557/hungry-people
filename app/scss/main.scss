@@ -1,5 +1,53 @@
 @import 'config';
 
-// CUSTOM USER STYLES & IMPORTS
+.h1 {
+  font-family: Banny;
+  font-size: 96px;
+  line-height: 1.45;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $textheading;
+  position: relative;
+  text-align: center;
+  margin: 0;
+
+  &:after {
+    content: '';
+    height: 5px;
+    width: 60px;
+    background-color: $accent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
+}
+
+.h2 {
+  font-family: Banny;
+  font-size: 36px;
+  line-height: 1.33;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $textheading;
+  text-align: center;
+  position: relative;
+  margin-bottom: 15px;
+
+  &:after {
+    content: '';
+    height: 5px;
+    width: 60px;
+    background: $accent;
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
+}
+
+body {
+  background-color: rgb(54, 50, 50);
+}
 
 
