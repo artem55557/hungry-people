@@ -2,9 +2,12 @@
 
 $accent: #E8C300; // Accent Color
 $fontsize: 18px; // Body Font Size
+$bg-light: #ffffff;
+$text: #ffffff;
 $textdark: #000000; // Text Color
 $textlight: rgba(255, 255, 255, 0.9);
 $textheading: #ffffff;
+$bordercolor: rgba(255, 255, 255, 0.2);
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
 $opensans: 'Open Sans', sans-serif; 
 
@@ -60,5 +63,5 @@ body {
   position: relative;
   line-height: 1.65;
   overflow-x: hidden;
-  color: $textdark;
+  color: $text;
 }
