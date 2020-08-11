@@ -106,6 +106,7 @@ body {
   padding-left: $grid-gutter-width/2;
   padding-top: 0.5rem;
   padding-right: 2.5rem;
+  font-weight: normal;
   font-size: 13.5px;
   // font-weight: bold;
   line-height: 1.8;
@@ -501,12 +502,74 @@ body {
 
 }
 
-.h2 {
-}
-.text--bold {
+//*************RSERVATION***************
+
+.reservation {
+
+  &__container {
+    display: flex;
+    padding: 6.25rem 0;
+  }
+
+  &__column {
+  }
+
+  &__title {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 $grid-gutter-width;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.36;
+
+    .form__input-field {
+      flex: 0 0 calc((100%/2) - 5px)
+    }
+
+    .form__button {
+      width: 100%;
+
+      
+    }
+  }
+
+  &__img-wrap {
+    margin-left: 2.5rem;
+  }
 }
 
-.img-response {
+.form {
+
+  &__input-field {
+    margin-bottom: $grid-gutter-width/2;
+  }
+
+  &__input {
+    height: 60px;
+    background-color: #e5e5e5;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding-left: 1rem;
+    width: 100%;
+    
+    &::placeholder {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 1.36;
+    }
+  }
+
+  &__button {
+  }
 }
 
 
