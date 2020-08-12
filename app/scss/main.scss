@@ -456,6 +456,7 @@ body {
 
   &__img-wrap {
     margin-right: 3.3rem;
+    box-sizing: border-box;
   }
 }
 
@@ -508,7 +509,8 @@ body {
 
   &__container {
     display: flex;
-    padding: 6.25rem 0;
+    padding-top: 6.25rem;
+    flex-wrap: wrap;
   }
 
   &__column {
@@ -542,6 +544,33 @@ body {
 
   &__img-wrap {
     margin-left: 2.5rem;
+  }
+
+  &__footer {
+    height: 6.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(51, 51, 51, 0.5);
+    font-size: 12px;
+    line-height: 12;
+
+    span, a {
+      font-weight: bold;
+      color: rgba(51, 51, 51, 0.6);
+    }
+
+    a {
+      transition: all 0.3s;
+
+      &:hover {
+        text-decoration: none;
+        color: rgba(51, 51, 51, 0.8);
+        transition: all 0.3s;
+      }
+    }
+
   }
 }
 
