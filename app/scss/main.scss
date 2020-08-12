@@ -43,6 +43,7 @@
     bottom: -9px;
     left: 50%;
     transform: translate(-50%, 100%);
+    border-radius: 5px;
   }
 }
 
@@ -455,13 +456,16 @@ body {
   }
 
   &__img-wrap {
-    margin-right: 3.3rem;
     box-sizing: border-box;
   }
 }
 
 .dark {
   background-color: rgb(54, 50, 50);
+
+  .h2 {
+    margin-top: 1.2rem;
+  }
 
   .rect {
     align-items: flex-end;
@@ -530,6 +534,7 @@ body {
     font-weight: normal;
     font-size: 14px;
     line-height: 1.36;
+    margin-left: $grid-gutter-width*3;
 
     .form__input-field {
       flex: 0 0 calc((100%/2) - 5px)
@@ -599,6 +604,72 @@ body {
 
   &__button {
   }
+}
+
+
+//***************SPECIALTIES****************
+
+.specialties {
+  background-image: url('../images/src/specialties-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__slide {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    height: 6.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__column {
+  }
+
+  &__img-wrap {
+    margin-right: 2.5rem;
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__paginate {
+    width: 100%;
+    height: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.swiper-pagination-bullet{
+
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  &-active {
+    background-color: rgb(255, 255, 255);
+  }
+
+  &:not(:last-child) {
+    margin-right: $grid-gutter-width;
+  }
+
 }
 
 
