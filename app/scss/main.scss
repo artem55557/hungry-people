@@ -870,3 +870,123 @@ body {
   }
 }
 
+//**************CNTACT******************************************************
+
+.contact {
+
+  &__container {
+    padding: 6.25rem 0;
+  }
+
+  &__title {
+    margin-bottom: 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__text {
+    max-width: 565px;
+    margin: 0 auto;
+    margin-bottom: 2.2rem;
+  }
+
+  &__body {
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .form__input-field {
+      flex: 0 0 calc((100% / 3) - 7px);
+
+      &:nth-child(4) {
+        // height: 120px;
+      }
+    }
+    
+    .form__input-field:nth-child(4) {
+      flex: 0 0 100%;
+
+      textarea {
+        min-height: 120px;
+        padding: $grid-gutter-width;
+        vertical-align: top;
+        overflow: hidden;
+      }
+    }
+    .form__button {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__feedback {
+    flex: 0 0 50%;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    a {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.025em;
+      padding-right: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+      // padding-left: 1.3rem;
+    }
+
+    i {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 0.3rem;
+      color: $accent;
+      line-height: 1;
+      svg {
+      height: 15px;
+      
+      }
+    }
+  }
+  
+}
+.form {
+
+  &__input-field {
+  }
+
+  &__input {
+  }
+
+  &__button {
+  }
+}
+
+//*************************FOOTER*****************
+
+.main-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 6.25rem;
+  font-size: 12px;
+
+  span {
+    font-weight: bold;
+    color:rgba(255, 255, 255, 0.4);
+  }
+}
