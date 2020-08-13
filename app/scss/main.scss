@@ -131,7 +131,14 @@ body {
     padding-bottom: 32.82%;
     border: 20px solid $accent;
     border-radius: 5px;
+  }
 
+  &--l-side {
+    align-items: flex-end;
+
+    &::after {
+      left: 0;
+    }
   }
 }
 
@@ -457,22 +464,16 @@ body {
 
   &__img-wrap {
     box-sizing: border-box;
+    margin-right: $grid-gutter-width*2;
   }
 }
 
 .dark {
   background-color: rgb(54, 50, 50);
+  position: relative;
 
   .h2 {
     margin-top: 1.2rem;
-  }
-
-  .rect {
-    align-items: flex-end;
-
-    &::after {
-      left: 0;
-    }
   }
 
   .img-wrap {
@@ -766,6 +767,106 @@ body {
   }
 }
 
+//***********EVENTS**************
 
+.events {
+  background-image: url('../images/src/specialties-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    width: 100%;
+    height: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__column {
+    
+    &:nth-child(1) {
+      .events__img-title {
+        left: 0;
+
+        span {
+          display: block;
+          transform-origin: bottom left;
+          transform: rotate(-90deg) translate(10%, 150%);
+          position: absolute;
+          bottom: 0;
+          border-radius: 5px 0 0 5px;
+        }
+      }
+    }
+  }
+
+  &__img-wrap {
+    position: relative;
+    margin: 0 $grid-gutter-width*2;
+
+  }
+
+  &__img-title {
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $text;
+    background-color: #000000;
+    z-index: 13;
+    white-space: nowrap;
+
+    span {
+      display: block;
+      transform-origin: bottom left;
+      transform: rotate(90deg) translate(-20%, -50%);
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  &__footer {
+    height: 6.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    line-height: 12;
+
+    a {
+      transition: all 0.3s;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.8;
+
+      &:hover {
+        text-decoration: none;
+        color: rgba(51, 51, 51, 0.8);
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  &__gallery {
+  }
+}
+
+.gallary-events {
+  display: flex;
+  width: 100%;
+
+  &__item {
+    position: relative;
+    flex: 0 0 calc(100% / 4);
+    padding-bottom: calc(100% / 4);
+  }
+}
 
