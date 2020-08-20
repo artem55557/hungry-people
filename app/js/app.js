@@ -59,5 +59,38 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
 
+  const animateItems = document.querySelectorAll('._amimate-items')
+
+  if (animateItems.length > 0) {
+    window.addEventListener('scroll', animateOnScroll);
+    function animateOnScroll() {
+      for (let i = 0; i < animateItems.length; i++) {
+        const animateItem = animateItems[i];
+        const animateItemHeight = animateItem.offsetHeight;
+        const animateItemOffset = offset(animateItem).top;
+        const animateStart = 4;
+
+        let animateItemPoint = window.innerHeight - animateItemHeight / animateStart;
+        if (animateItemHeight > window.innerHeight) {
+          animateItemPoint = window.innerHeight - window.innerHeight / animateStart;
+        }
+
+        if ((pageYOffset > animateItemOffset - animateItemPoint) && pageYOffset < (animateItemOffset + animateItemHeight)) {
+          animateItem.classList.add('_active')
+        } else {
+          // animateItem.classList.remove('_active')
+        }
+      }
+    }
+    function offset(el) {
+      const rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+  }
+
+  animateOnScroll()
+
 
 });
