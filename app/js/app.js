@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+//Swiper
+
   const swiperSpec = new Swiper('.swiper-container', {
     loop: true,
 
@@ -7,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
       clickable: true,
     },
   });
+
+//menu
 
   const burger = document.querySelector('.burger-btn')
   const menu = document.querySelector('.menu')
@@ -19,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
 
+//scroll by anchor
+
   const anchors = document.querySelectorAll('.menu__link')
   let animationTime = 300;
   let framesCount = 20;
@@ -26,13 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   anchors.forEach(function(item) {
     item.addEventListener('click', function(e) {
       e.preventDefault();
-      const activeLink = document.querySelector('.menu__link.active');
 
-      if(activeLink) {
-        activeLink.classList.remove('active');
-      }
-
-      item.classList.add('active')
       let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
 
       let scroller = setInterval(function() {
@@ -40,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
           window.scrollBy(0, scrollBy);
-          item.classList.add('active')
         } else {
           window.scrollTo(0, coordY);
           clearInterval(scroller);
@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+//active menu link
+
   window.addEventListener('scroll', () => {
     const topline = document.querySelector('.firstscreen__top-line')
     if (window.pageYOffset >= 100) {
@@ -56,8 +58,27 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       topline.classList.remove('fixed')
     }
+    activeLinkOnScroll()
   })
 
+  function activeLinkOnScroll() {
+    for (let i = 0; i < anchors.length; i++) {
+      const link = anchors[i];
+      const item = document.querySelector(link.getAttribute('href'));
+      const itemHeight = document.querySelector(link.getAttribute('href')).getBoundingClientRect().height;
+      const itemOffset = offset(item).top;
+
+      let itemPoint = window.innerHeight * 0.3;
+
+      if ((pageYOffset > itemOffset - itemPoint) && pageYOffset < (itemOffset + itemHeight - itemPoint)) {
+        link.classList.add('active')
+      } else {
+        link.classList.remove('active')
+      }
+    }
+  }
+
+//animation on scroll
 
   const animateItems = document.querySelectorAll('._amimate-items')
 
@@ -82,15 +103,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     }
-    function offset(el) {
-      const rect = el.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-    }
   }
 
-  animateOnScroll()
+//Element offset
+
+
+  function offset(el) {
+    const rect = el.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+  }
+
+  animateOnScroll();
+  activeLinkOnScroll();
 
 
 });
