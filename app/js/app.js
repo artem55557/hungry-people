@@ -21,33 +21,52 @@ document.addEventListener("DOMContentLoaded", function() {
       event.preventDefault()
       burger.classList.toggle('open')
       menu.classList.toggle('menu--open')
+      if(menu.classList.value.includes('menu--open')) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
+      }
     })
   }
 
 //scroll by anchor
 
   const anchors = document.querySelectorAll('.menu__link')
+  const btnDown = document.querySelector('.btn-scroll-down')
   let animationTime = 300;
   let framesCount = 20;
+  let topOffset = 55;
 
   anchors.forEach(function(item) {
     item.addEventListener('click', function(e) {
       e.preventDefault();
-
-      let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
-
-      let scroller = setInterval(function() {
-        let scrollBy = coordY / framesCount;
-
-        if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
-          window.scrollBy(0, scrollBy);
-        } else {
-          window.scrollTo(0, coordY);
-          clearInterval(scroller);
-        }
-      }, animationTime / framesCount);
+      menu.classList.remove('menu--open')
+      burger.classList.remove('open')
+      document.body.style.overflow = ''
+      scrollToAnchor(item);
     });
   });
+
+  btnDown.addEventListener('click', e => {
+    e.preventDefault();
+    scrollToAnchor(btnDown)
+  })
+
+  function scrollToAnchor(item) {
+   
+    let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset - topOffset;
+
+    let scroller = setInterval(function() {
+      let scrollBy = coordY / framesCount;
+
+      if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+        window.scrollBy(0, scrollBy);
+      } else {
+        window.scrollTo(0, coordY);
+        clearInterval(scroller);
+      }
+    }, animationTime / framesCount);
+  }
 
 //active menu link
 
