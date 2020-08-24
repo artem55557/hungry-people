@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //active menu link
 
   window.addEventListener('scroll', () => {
-    const topline = document.querySelector('.firstscreen__top-line')
+    const topline = document.querySelector('.main-header')
     if (window.pageYOffset >= 100) {
       topline.classList.add('fixed')
     } else {

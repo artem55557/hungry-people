@@ -519,33 +519,8 @@ body {
 }
 
 
-//*************FIRST SCREEN********************
-
-.firstscreen {
-  width: 100%;
-  height: 100vh;
-  background: url('../images/src/header-bg.png') no-repeat, linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  background-size: cover;
-  overflow: hidden;
-  position: relative;
-
-  &__container {
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-top: 100px;
-    padding-bottom: 0;
-    box-sizing: border-box;
-
-    @include media-breakpoint-down(md) {
-      padding-top: 55px;
-      padding: 0;
-    }
-  }
-
-  &__top-line {
+//****************HEADER*************************
+.main-header {
     display: flex;
     flex: 0 0 100%;
     justify-content: center;
@@ -556,18 +531,13 @@ body {
     z-index: 102;
 
     &.fixed {
-      // position: fixed;
-      // top: 0;
-      // right: 0;
-      // left: 0;
       background-color: rgba(0, 0, 0, 0.8);
-      // z-index: 100;
 
       .menu__link {
         height: 55px;
       }
 
-      .firstscreen__logo {
+      .main-header__logo {
         top: 5px;
         height: 70px;
         width: 70px;
@@ -597,9 +567,7 @@ body {
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 101;
       }
-      // background-color: rgba(0, 0, 0, 0.8);
     }
-  }
 
   &__logo {
     position: absolute;
@@ -626,10 +594,6 @@ body {
   &__menu {
     flex: 0 0 100%;
     max-width: 1280px;
-
-    @include media-breakpoint-down(md){
-      // transform: translateY(-120%);
-    }
   }
 
   &__burger {
@@ -637,6 +601,35 @@ body {
     right: 10px;
     top: 15px;
     z-index: 1000;
+  }
+
+
+}
+
+//*************FIRST SCREEN********************
+
+.firstscreen {
+  width: 100%;
+  height: 100vh;
+  background: url('../images/src/header-bg.png') no-repeat, linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 55px;
+      padding: 0;
+    }
   }
 
   &__body-l {
@@ -1065,7 +1058,6 @@ body {
   &__input-field {
     margin-bottom: $grid-gutter-width/2;
     opacity: 0;
-    transform: scale(0);
     transition: all 0.5s ease; 
   }
 
@@ -1088,14 +1080,13 @@ body {
 
   &__button {
     opacity: 0;
-    transform: scale(0);
+    // transform: scale(0);
     transition: all 0.5s ease; 
   }
 
   &._active {
     .form__input-field, .form__button {
       opacity: 1;
-      transform: scale(1);
       transition: all 0.5s ease 0.4s; 
     }
   }
