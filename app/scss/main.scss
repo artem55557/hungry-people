@@ -366,7 +366,7 @@ body {
       width: 100%;
       height: 1px;
       background-color: $accent;
-      transform: translateX(-102%);
+      transform: scale(0);
       transition: transform .5s ease-in;
       z-index: 1;
     }
@@ -377,7 +377,7 @@ body {
       transition: all .1s;
 
       &::after {
-        transform: translateX(0%);
+        transform: scale(1);
       }
     }
 
@@ -387,7 +387,7 @@ body {
       transition: all .1s;
 
       &::after {
-        transform: translateX(0%);
+        transform: scale(1);
       }
     }
 
@@ -1127,6 +1127,7 @@ body {
   }
 
   &__column {
+    overflow: hidden;
   }
 
   &__img-wrap {
